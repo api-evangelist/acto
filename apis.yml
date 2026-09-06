@@ -1,17 +1,40 @@
 aid: acto
-name: Acto
-description: 'Acto is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: ACTO
+description: ACTO is a Toronto-headquartered Life Sciences software company whose Intelligent Field Excellence
+  (IFE) platform prepares biopharmaceutical, biotech and medtech commercial and medical field teams for
+  healthcare-provider conversations. The platform is organized into three product pillars — Educate (learning,
+  certification and MLR-approved content delivery), Engage (coaching, AI roleplay and practice through
+  capabilities such as TalkTRx, CXZone, Journeys and the OmniSight dashboard) and Augment (real-time in-field
+  support, including the LAICA assistant and role-based "SuperAgent" AI) — and is sold to enterprise Life
+  Sciences organizations rather than to developers. ACTO states it supports more than 50,000 field professionals
+  across 100+ countries and is a Veeva Gold Product Partner with validated integrations into Veeva Vault
+  CRM, PromoMats and MedComms, plus an ACTOverse partner marketplace of pre-vetted content, data and services
+  vendors. It is a validated platform compliant with FDA 21 CFR Part 11 and publishes SOC 2 Type 2, ISO/IEC
+  27001 and GDPR posture through a SafeBase trust center. ACTO publishes no public developer portal, no
+  API reference and no machine-readable contract of any kind — its integration surface is delivered as
+  certified, partner-side work against Veeva's APIs rather than as a first-party public API.
+image: https://acto.com/wp-content/uploads/2022/10/Logo-1200x347.png
 url: https://raw.githubusercontent.com/api-evangelist/acto/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-09-06'
 modified: '2026-09-06'
 tags:
-- Company
+- Life Sciences
+- Pharmaceutical
+- Sales Enablement
+- Learning Management
+- Field Force Effectiveness
+- Medical Affairs
+- Commercial Excellence
+- Training and Certification
+- Omnichannel Engagement
+- Artificial Intelligence
+- Medical Devices
+- Biotechnology
+- Content Management
+- Healthcare
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +43,64 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://acto.com/
+- type: Blog
+  url: https://acto.com/resources/blog/
+- type: Support
+  url: https://acto.com/contact-us/
+- type: Login
+  url: https://app.acto.com/login
+- type: TermsOfService
+  url: https://acto.com/terms-of-use/
+- type: PrivacyPolicy
+  url: https://acto.com/privacy-policy/
+- type: StatusPage
+  url: https://status.acto.com/
+- type: Compliance
+  url: https://trust.acto.com/
+- type: TrustCenter
+  url: security/acto-trust-center.yml
+- type: DomainSecurity
+  url: security/acto-domain-security.yml
+- type: Lifecycle
+  url: lifecycle/acto-lifecycle.yml
+- type: Conformance
+  url: conformance/acto-conformance.yml
+- type: Packages
+  url: packages/acto-packages.yml
+- type: Plans
+  url: plans/acto-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/acto-rate-limits.yml
+- type: LLMsTxt
+  url: llms/acto-llms.txt
+x-enrichment:
+  date: '2026-09-06'
+  status: minimal
+  artifacts_added: 10
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: ACTO ships an enterprise Life Sciences SaaS with no developer program of any kind — api./developers./developer./docs./portal.acto.com
+    are all NXDOMAIN, /openapi.json /swagger.json /api-docs and every /.well-known/ path 404 on all six
+    live ACTO hosts, and its only integration story is certified partner-side work CONSUMING Veeva Vault
+    APIs, so there is no ACTO contract to harvest.
+  evidence:
+  - url: https://acto.com/openapi.json
+    status: 404
+  - url: https://acto.com/llms.txt
+    status: 404
+  - url: https://acto.com/pricing/
+    status: 404
+  - url: https://acto.com/.well-known/security.txt
+    status: 404
+  - url: https://acto.com/.well-known/agent-card.json
+    status: 404
+  - url: https://app.acto.com/openapi.json
+    status: 404
+  - url: https://acto.com/partners/actoverse/
+    status: 200
+  - url: https://trust.acto.com/
+    status: 403
+  checked: '2026-09-06'

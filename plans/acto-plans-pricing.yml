@@ -1,0 +1,27 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  Read of the full acto.com Yoast page sitemap (161 URLs) for a pricing, plans or packaging
+  page, plus a direct probe of https://acto.com/pricing/, 2026-09-06.
+plan_count: 0
+plans: []
+pricing_model: enterprise-contact-sales
+evidence:
+- url: https://acto.com/pricing/
+  status: 404
+  note: no pricing page exists — the WordPress themed 404 is returned
+- url: https://acto.com/contact-us/
+  status: 200
+  note: >-
+    "Request a Demo" / contact form is the only commercial entry point on the site; no tier,
+    seat price, quota or overage is named anywhere.
+- url: https://acto.com/salesordertermsofservice/
+  status: 200
+  note: >-
+    The Sales Order Terms of Service governs pricing by reference to an executed order form
+    — it states no published price.
+note: >-
+  ACTO publishes no plans, tiers or prices. The platform is sold enterprise-only to Life
+  Sciences organizations through a demo request and a negotiated sales order. This is a
+  measured zero, not an unchecked field. NO Pricing pointer is emitted in apis.yml because
+  there is no pricing page to point at.

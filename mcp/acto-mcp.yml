@@ -1,0 +1,37 @@
+generated: '2026-09-06'
+method: probed
+status: none
+source: >-
+  DNS resolution and HTTP probes on 2026-09-06 against mcp.acto.com, api.acto.com,
+  acto.com/mcp and app.acto.com/mcp, plus a web search for a published ACTO MCP server and a
+  read of the acto.com AI/SuperAgent product pages.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: probed
+server: null
+tools: []
+probes:
+- url: https://mcp.acto.com/mcp
+  method: POST tools/list
+  result: DNS NXDOMAIN — host does not resolve
+- url: https://api.acto.com/mcp
+  method: POST tools/list
+  result: DNS NXDOMAIN — host does not resolve
+- url: https://acto.com/mcp
+  method: POST tools/list
+  status: 404
+  result: WordPress themed 404 — not an MCP endpoint
+- url: https://app.acto.com/mcp
+  method: POST tools/list
+  status: 404
+  result: tenant application 404 — not an MCP endpoint
+note: >-
+  ACTO markets AI heavily — "SuperAgents", ACTO AI, the LAICA assistant — but ships no hosted
+  MCP server and no stdio MCP package, and there is no public OpenAPI from which a candidate
+  tool list could be derived. mode is none and NO MCPServer pointer is emitted in apis.yml.
+  This file records that the probe ran and missed. No tool crosswalk is written, since there
+  is neither an MCP tool list nor an OpenAPI to bind one to.

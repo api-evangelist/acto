@@ -1,0 +1,62 @@
+generated: '2026-09-06'
+method: searched
+probe: true
+source: https://trust.acto.com/
+url: https://trust.acto.com/
+platform: SafeBase
+platform_evidence: >-
+  trust.acto.com is a CNAME to acto.portals.safebase.io — a first-party subdomain ACTO
+  controls, delegated to the SafeBase trust-center product.
+certifications:
+- SOC 2 Type 2
+- ISO/IEC 27001
+- GDPR
+- FDA 21 CFR Part 11
+evidence:
+- source: https://trust.acto.com/
+  status: 200
+  keywords:
+  - soc 2 type 2
+  - iso/iec 27001
+  - gdpr
+  - 21 cfr part 11
+  - trust center
+  note: >-
+    Certification list read from the rendered trust-center page. The host is behind a
+    Cloudflare bot challenge and answers 403 to a plain command-line fetch, so the page was
+    read with a browser-class client; it is live, not dead.
+- source: https://acto.com/platform/
+  status: 200
+  note: >-
+    Corroborates the 21 CFR Part 11 claim independently — "validated closed and open
+    systems, secure user authentication, time-stamped audit trails, change control
+    processes".
+readability: rendered-read
+vulnerability_disclosure:
+  found: false
+  partial: true
+  note: >-
+    The trust center carries an "App Security" section listing a "Responsible Disclosure"
+    document, but the document itself sits inside the SafeBase portal behind a document
+    access request and could not be read anonymously, so no policy URL and no security
+    contact can be recorded. The automated probe (0-working/probe-security-programs.py)
+    correctly declined to write a vulnerability-disclosure artifact on this evidence.
+  probed:
+  - url: https://acto.com/.well-known/security.txt
+    status: 404
+  - url: https://acto.com/security
+    status: 404
+  - url: https://acto.com/responsible-disclosure
+    status: 404
+  - url: https://acto.com/vulnerability-disclosure
+    status: 404
+  - url: https://app.acto.com/.well-known/security.txt
+    status: 404
+  pointer_policy: >-
+    NO Security and NO VulnerabilityDisclosure pointer is emitted. There is no publicly
+    readable disclosure policy or security contact to point at, and pointing at the trust
+    center root for a document we could not open would be a claim we cannot back.
+pointer_policy: >-
+  A TrustCenter pointer is emitted against security/acto-trust-center.yml, and a Compliance
+  pointer against https://trust.acto.com/ — ACTO names four current, verifiable frameworks
+  there, which is exactly what compliance_published reads.

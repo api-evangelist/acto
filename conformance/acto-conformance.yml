@@ -1,0 +1,83 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  ACTO trust center at https://trust.acto.com/ (SafeBase), the acto.com platform and
+  21 CFR Part 11 compliance copy, and anonymous /.well-known/ probes across every ACTO
+  host, 2026-09-06.
+summary: >-
+  ACTO publishes no machine-readable contract, so no API-level cross-cutting standard can be
+  asserted from a spec — every technical standard below is recorded as a measured absence
+  from live probes, not an inference. What ACTO does publish is a regulated-industry
+  compliance posture, named on its own trust center, which is captured under
+  domain_standards.
+standards:
+- id: oauth2
+  conforms: unknown
+  evidence: >-
+    No OpenAPI securitySchemes and no public authentication documentation exist. The tenant
+    application at app.acto.com is a server-rendered login form; no OAuth authorize or token
+    endpoint is exposed to an anonymous caller.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returned 404 on acto.com, www.acto.com, app.acto.com, status.acto.com and laica.acto.com
+- id: rfc8414-oauth-authorization-server
+  conforms: false
+  evidence: /.well-known/oauth-authorization-server absent on every host — see well-known/acto-well-known.yml
+- id: rfc9728-oauth-protected-resource
+  conforms: false
+  evidence: /.well-known/oauth-protected-resource absent on every host
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No API surface returns application/problem+json; there is no public API to observe.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returned 404 on every ACTO-controlled host
+- id: rfc8615-well-known-uris
+  conforms: false
+  evidence: no /.well-known/ document is served on any host
+- id: openapi
+  conforms: false
+  evidence: >-
+    /openapi.json, /swagger.json, /api-docs and /v1/openapi.json all returned 404 on
+    acto.com, app.acto.com, status.acto.com and laica.acto.com; api.acto.com,
+    developers.acto.com, developer.acto.com and docs.acto.com are NXDOMAIN.
+- id: mcp
+  conforms: false
+  evidence: mcp.acto.com and api.acto.com are NXDOMAIN; POST tools/list to acto.com/mcp and app.acto.com/mcp returned 404
+- id: a2a
+  conforms: false
+  evidence: /.well-known/agent-card.json and /.well-known/agent.json returned 404 on every host
+domain_standards:
+- id: fda-21-cfr-part-11
+  conforms: true
+  evidence: >-
+    ACTO's trust center names "21 CFR Part 11" as a compliance framework, and acto.com/platform/
+    states the platform provides "validated closed and open systems, secure user
+    authentication, time-stamped audit trails, change control processes". This is a
+    regulated-industry electronic-records/electronic-signatures posture, published by the
+    provider, not a contract-level declaration — no machine-readable artifact carries it.
+  source: https://trust.acto.com/
+- id: soc-2-type-2
+  conforms: true
+  evidence: Named on the ACTO trust center as an achieved certification.
+  source: https://trust.acto.com/
+- id: iso-iec-27001
+  conforms: true
+  evidence: Named on the ACTO trust center as an achieved certification.
+  source: https://trust.acto.com/
+- id: gdpr
+  conforms: true
+  evidence: Named on the ACTO trust center; acto.com/privacy-policy/ carries the corresponding data-subject terms.
+  source: https://trust.acto.com/
+- id: veeva-vault-crm-integration
+  conforms: true
+  evidence: >-
+    ACTO is a Veeva Gold Product Partner with validated integrations across Veeva Vault CRM,
+    PromoMats and MedComms. This is a vendor certification program, not an open standard,
+    and it describes ACTO CONSUMING Veeva's APIs rather than publishing its own.
+  source: https://acto.com/partners/veeva/
+note: >-
+  A Compliance pointer IS emitted in apis.yml against https://trust.acto.com/ because ACTO
+  publishes named, current certifications there (SOC 2 Type 2, ISO/IEC 27001, GDPR,
+  21 CFR Part 11) that a reader can verify. No Conformance-derived technical standard is
+  claimed — there is no contract to derive one from.

@@ -1,0 +1,52 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  Unauthenticated registry queries on 2026-09-06 across npm, PyPI, RubyGems, crates.io,
+  NuGet, Packagist and pkg.go.dev, plus a read of the whole acto.com page sitemap
+  (161 URLs), the platform pages and the ACTOverse partner marketplace for an SDK, client
+  library or CLI download link.
+package_count: 0
+official_package_count: 0
+packages: []
+registries_searched:
+- registry: npm
+  query: https://registry.npmjs.org/-/v1/search?text=acto&size=10
+  result: >-
+    No first-party package. Nearest hits are `acto` (a browser-test connector by kolodny)
+    and `@acto/ajax` (an HTTP wrapper published from bitbucket.org/acto/actojs) — neither
+    is ACTO Technologies Inc.
+- registry: pypi
+  query: https://pypi.org/pypi/acto/json
+  status: 200
+  result: >-
+    OWNERSHIP REJECTED. The PyPI project `acto` is "Automate Common Tasks On-demand" by
+    Hansimov, homed at github.com/Hansimov/acto. Not ACTO Technologies Inc.
+- registry: rubygems
+  query: https://rubygems.org/api/v1/search.json?query=acto
+  result: only unrelated actor-model gems (actory, actor, actor_model, actors, actor_sync)
+- registry: crates.io
+  query: https://crates.io/api/v1/crates?q=acto
+  result: >-
+    only unrelated Rust actor crates (acto, acto-rs by dbeck, actos by actos-dev) — none
+    ACTO Technologies Inc.
+- registry: nuget
+  query: https://azuresearch-usnc.nuget.org/query?q=acto
+  result: only unrelated actor-framework packages (Dapr.Actors, Akka, Microsoft.Orleans)
+- registry: packagist
+  query: https://packagist.org/search.json?q=acto
+  result: only unrelated audit-log and actor packages
+- registry: pkg.go.dev
+  query: https://pkg.go.dev/search?q=acto
+  result: no first-party module
+- registry: github
+  query: https://api.github.com/orgs/acto
+  status: 200
+  result: >-
+    OWNERSHIP REJECTED. The github.com/acto organization is "Acto Informatisering B.V."
+    of Amersfoort, NL (acto.nl), an ERP vendor for the Dutch construction and installation
+    trades. It is a different company that shares the name. No ACTO Technologies Inc.
+    GitHub organization was found, and no GitHubOrganization pointer is emitted.
+note: >-
+  ACTO ships no public SDK, client library or CLI. Every registry hit on the string "acto"
+  belongs to a different owner and was rejected on the ownership check rather than recorded.
+  NO SDKs pointer and NO CLI pointer is emitted in apis.yml. A measured zero.

@@ -1,0 +1,58 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  Read of the full acto.com Yoast page sitemap (161 URLs) plus direct probes of
+  status.acto.com and the acto.com legal pages, 2026-09-06.
+versioning:
+  scheme: null
+  current: null
+  docs: null
+  note: >-
+    ACTO publishes no API and therefore no API versioning policy. The platform is a hosted
+    multi-tenant SaaS whose releases are communicated to customers in-product and through
+    the customer success channel, not through a public version scheme.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: >-
+    No deprecation or sunset policy is published anywhere on the public surface. No
+    Deprecation pointer is emitted in apis.yml.
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    No SLA or uptime target is published publicly; commercial terms live in the
+    Sales Order Terms of Service and Managed Services Terms, which state no numeric target
+    a reader can extract.
+status_page: https://status.acto.com/
+status_page_detail:
+  title: ACTO Omnichannel Status
+  legal_entity: ACTO Technologies Inc.
+  platform: Instatus
+  platform_evidence: >-
+    The served HTML is a Sapper/Svelte shell loading /client/client.bb5e043c.js, the
+    Instatus hosted status-page signature.
+  machine_readable_feed: false
+  feed_probes:
+  - path: /summary.json
+    status: 404
+  - path: /history.json
+    status: 404
+  - path: /feed.rss
+    status: 404
+  - path: /feed.atom
+    status: 404
+  note: >-
+    The status page is live and first-party on an ACTO-controlled subdomain, but the
+    component list and incident history render client-side and no JSON or RSS feed is
+    served, so the current state cannot be read by a machine anonymously.
+deprecated_operations: []
+evidence:
+- url: https://status.acto.com/
+  status: 200
+- url: https://acto.com/salesordertermsofservice/
+  status: 200
+- url: https://acto.com/managedservicesterms/
+  status: 200
+- url: https://acto.com/terms-of-use/
+  status: 200

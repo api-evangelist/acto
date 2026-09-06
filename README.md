@@ -64,5 +64,8 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Acto is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+ACTO (ACTO Technologies Inc., Toronto, Canada) builds the Intelligent Field Excellence platform for Life Sciences — enterprise SaaS that prepares biopharmaceutical, biotech and medtech commercial and medical field teams for healthcare-provider conversations through learning, coaching, AI roleplay and in-field assistance. ACTO publishes no public API, no developer portal, no SDK and no machine-readable contract; its integration surface is certified partner-side work against Veeva Vault APIs. This profile records that measured absence alongside the trust, status and domain-security posture ACTO does publish.
+
+- https://acto.com/
+- https://trust.acto.com/
+- https://status.acto.com/

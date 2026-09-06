@@ -1,0 +1,23 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  Read of the full acto.com Yoast page sitemap (161 URLs) for any documented limit, plus
+  anonymous response-header inspection of acto.com, app.acto.com and status.acto.com,
+  2026-09-06.
+limit_count: 0
+limits: []
+response_headers: []
+exhaustion_status: null
+evidence:
+- url: https://acto.com/
+  status: 200
+  note: >-
+    Cloudflare-fronted WordPress marketing site. No X-RateLimit-*, no RateLimit-* and no
+    Retry-After header on an anonymous response.
+- url: https://app.acto.com/login
+  status: 200
+  note: Tenant login application; no rate-limit headers emitted to an anonymous caller.
+note: >-
+  ACTO documents no rate limits anywhere on its public surface. There is no developer
+  portal, no API reference and no published contract in which a limit could be stated, and
+  no live host emits a runtime rate-limit signal to an anonymous caller. An honest zero.

@@ -1,0 +1,188 @@
+generated: '2026-09-06'
+method: probed
+source: >-
+  Anonymous HTTPS probes of the closed /.well-known/ path list (plus the two non-well-known
+  APIs.json locations) against every host the record knows, 2026-09-06. Hosts probed:
+  acto.com, www.acto.com, app.acto.com (the tenant login application), status.acto.com
+  (Instatus status page), laica.acto.com (LAICA marketing host) and trust.acto.com (SafeBase
+  trust center). api./developers./developer./docs./portal./my./admin..acto.com were checked
+  first and every one of them is NXDOMAIN.
+hit_count: 0
+path_echo_control: passed
+note: >-
+  ACTO serves no /.well-known/ document on any host. Every named path returned 404 with the
+  WordPress or application 404 body, and the negative-control path
+  /.well-known/acto-negative-control-7f3ab91c.json returned the identical 404 on every host,
+  so no host is a path-echoing or SPA catch-all responder. trust.acto.com is behind a
+  Cloudflare bot challenge and answered 403 uniformly, including on the negative control, so
+  nothing can be asserted about that host either way. NO WellKnown and NO SecurityTxt pointer
+  is emitted in apis.yml — this file records a measured absence, not a surface.
+hosts:
+- host: https://acto.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 403
+    note: >-
+      Not a document. The WordPress host returns a 548-byte generic forbidden body for the
+      .yml extension rather than the 422KB themed 404 — an extension deny rule, not content.
+  - path: /.well-known/acto-negative-control-7f3ab91c.json
+    status: 404
+    note: negative control — correctly 404, host does not echo paths
+- host: https://www.acto.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /.well-known/acto-negative-control-7f3ab91c.json
+    status: 404
+    note: negative control — correctly 404
+- host: https://app.acto.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /.well-known/acto-negative-control-7f3ab91c.json
+    status: 404
+    note: negative control — correctly 404
+- host: https://status.acto.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /.well-known/acto-negative-control-7f3ab91c.json
+    status: 404
+    note: negative control — correctly 404
+- host: https://laica.acto.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /.well-known/acto-negative-control-7f3ab91c.json
+    status: 404
+    note: negative control — correctly 404
+- host: https://trust.acto.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    note: Cloudflare bot challenge — SafeBase host answers 403 to every path including the control
+  - path: /.well-known/openid-configuration
+    status: 403
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+  - path: /.well-known/oauth-protected-resource
+    status: 403
+  - path: /.well-known/api-catalog
+    status: 403
+  - path: /.well-known/ai-plugin.json
+    status: 403
+  - path: /.well-known/aauth-resource.json
+    status: 403
+  - path: /.well-known/agent-card.json
+    status: 403
+  - path: /.well-known/agent.json
+    status: 403
+  - path: /.well-known/apis.json
+    status: 403
+  - path: /apis.json
+    status: 403
+  - path: /.well-known/acto-negative-control-7f3ab91c.json
+    status: 403
+    note: negative control — the uniform 403 means no hit can be claimed on this host
